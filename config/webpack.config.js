@@ -12,9 +12,6 @@ module.exports = {
     // filename: 'bundle.js' //单个入口
     filename: "[name].js",
   },
-  devServer: {
-    
-  }
   module: {
     rules: [
       //css
@@ -23,6 +20,15 @@ module.exports = {
         use: [
           { loader: miniCssExtractPlugin.loader },
           { loader: "css-loader" },
+        ],
+      },
+      //sass
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: miniCssExtractPlugin.loader },
+          { loader: "css-loader" },
+          { loader: "sass-loader" },
         ],
       },
       //less
